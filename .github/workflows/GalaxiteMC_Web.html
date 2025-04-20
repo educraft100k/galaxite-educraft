@@ -1,20 +1,124 @@
-name: Jekyll site CI
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: Build the site in the jekyll/builder container
-      run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>GalaXiteMC - Servidor de Minecraft</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #ffffff;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      text-align: center;
+      padding: 20px 0;
+      margin-bottom: 20px;
+    }
+    
+    h1 {
+      color: #8e44ad;
+      font-size: 36px;
+    }
+    
+    .server-info {
+      background-color: #1e1e1e;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    
+    .announcement {
+      background-color: #2c2c2c;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    
+    .links {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+    
+    .link-button {
+      background-color: #8e44ad;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    
+    .server-address {
+      text-align: center;
+      font-size: 20px;
+      background-color: #333;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+    
+    .creators {
+      background-color: #1e1e1e;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>GalaXiteMC</h1>
+      <p>Servidor de Minecraft Pocket Edition - ¡Explora el universo con nosotros!</p>
+    </header>
+    
+    <div class="server-address">
+      <p><strong>IP:</strong> GalaXiteMC.sytes.net</p>
+      <p><strong>Puerto:</strong> 25635</p>
+    </div>
+    
+    <div class="server-info">
+      <h2>Información del Servidor</h2>
+      <p><strong>Versión:</strong> 0.15.10</p>
+      <p><strong>Soporte:</strong> <a href="https://discord.gg/JQZub3ZMvc" style="color: #8e44ad;">https://discord.gg/JQZub3ZMvc</a></p>
+    </div>
+    
+    <h2>Anuncios</h2>
+    <div class="announcement">
+      <h3>¡Bienvenidos a GalaXiteMC!</h3>
+      <p>Únete a nuestra comunidad y explora un mundo lleno de posibilidades. Construye, compite y haz amigos en nuestro servidor.</p>
+    </div>
+    
+    <div class="announcement">
+      <h3>Actualizaciones Recientes</h3>
+      <p>Estamos constantemente mejorando el servidor para ofrecerte la mejor experiencia de juego. ¡Mantente atento a las novedades!</p>
+    </div>
+    
+    <h2>Enlaces</h2>
+    <div class="links">
+      <a href="https://discord.gg/JQZub3ZMvc" class="link-button">Discord</a>
+      <a href="https://youtube.com/@eduardo_1000k?si=QBB3kTnmBC_lBYcc" class="link-button">YouTube</a>
+    </div>
+    
+    <div class="creators">
+      <h2>Creadores</h2>
+      <p>@educraft_100k</p>
+      <p>jeipro</p>
+      <p>Xxx_BOTi_xxX</p>
+    </div>
+    
+    <footer>
+      <p>© 2025 GalaXiteMC | Todos los derechos reservados</p>
+    </footer>
+  </div>
+</body>
+  </html>
